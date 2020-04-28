@@ -1,0 +1,308 @@
+<html><head>
+    <title>Faces 2.x</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column h-100">
+<header>
+    <div class="navbar navbar-expand flex-column flex-md-row bd-navbar">
+        <img src="/img/ico.png" width="60" height="60" class="d-inline-block align-top" alt="logo">
+        <h1 class="my-0 mr-md-auto font-weight-normal">Faces 2.x</h1>
+        <a class="btn btn-outline-primary" href="/logout">Logout</a>
+    </div>
+</header>
+<div class="col-md-12">
+    <div class="row flex-xl-nowrap">
+        <div class="col-md-2 col-xl-2 bd-sidebar">
+    <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+                <a href="/employees"><h4 class="my-0">People</h4></a>
+            </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+                <a href="/positions"><h4 class="my-0">Positions</h4></a>
+            </div>
+        </li>
+    </ul>
+</div>
+
+        <main class="col-md-10 col-xl-8 bd-content" role="main">
+            <div class="btn-toolbar justify-content-between mb-4">
+                <!-- search -->
+                <a href="/addEmployee" class="btn btn-primary">Add new employee</a>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Input text for search...">
+                    <div class="input-group-append">
+                        <button class="btn btn-secondary" type="button">Search</button>
+                    </div>
+                </div>
+            </div>
+            <!-- positions and filter -->
+            <div class="row">
+                <div class="col-md-3 order-md-2 mb-4">
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div class="mb-3">
+                                <label for="state">Positions</label>
+                                <select onchange="location = '?filter=title&amp;title=' + this.value" class="custom-select d-block w-100" id="state" required="">
+                                    <option>No Title</option>
+                                    <option>Student</option>
+                                    <option>Senior Software Engineer</option>
+                                    <option>System Administrator</option>
+                                    <option>TestPosition</option>
+                                    <option>Test</option>
+                                    <option>Test, Pos.</option>
+                                    <option>Test^position#4</option>
+                                    <option>"one space"</option>
+                                    <option>Java Dev.</option>
+                                    <option>Java Dev.</option>
+                                    <option>Java Development</option>
+                                    <option>Java Development</option>
+                                    <option>Java Development</option>
+                                    <option>C++ Dev.</option>
+                                    <option>TestPos1</option>
+                                    <option>testpos2</option>
+                                    <option>testpos3</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div class="mb-3">
+                                <label for="someVal">Maybe filter</label>
+                                <input type="text" class="form-control" id="someVal" placeholder="Maybe filter">
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-center lh-condensed">
+                            <!-- sorting -->
+                            <form action="/employees" id="employees-sort" method="get">
+                                <div class="btn-group-vertical">
+                                    <button class="btn btn-outline-dark mb-3 btn-block" type="submit" name="action" value="sortByNameAsc">Sort by name A-Z
+                                    </button>
+                                    <button class="btn btn-outline-dark mb-3 btn-block" type="submit" name="action" value="sortByNameDesc">Sort by name Z-A
+                                    </button>
+                                    <button class="btn btn-outline-dark mb-3 btn-block" type="submit" name="action" value="sortByTitleAsc">Sort by title A-Z
+                                    </button>
+                                    <button class="btn btn-outline-dark mb-3 btn-block" type="submit" name="action" value="sortByTitleDesc">Sort by title Z-A
+                                    </button>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                <!-- employees cards -->
+                <div class="col-md-9 order-md-1">
+                    <div class="d-flex flex-row flex-wrap">
+                        <div class="p-2 card mr-5 mb-4 shadow-sm" style="width: 15rem;">
+                            <div class="card-header">
+                                <h5 style="display: inline" class="my-0 font-weight-normal mr-2">Andrey Gordeev</h5>
+                                <form style="display: inline" action="/editEmployee" id="edit-employee-form" method="post">
+                                    <button type="submit" class="btn btn-sm btn-icon pt-0 pl-0 pb-0 pr-0" value="63b097be-346b-461e-81bf-dbd88246a88f" name="employeeId">
+                                        <svg class="bi bi-pencil-square" width="1.5em" height="1.5em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z"></path>
+                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-6a.5.5 0 00-1 0v6a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-11a.5.5 0 01.5-.5H9a.5.5 0 000-1H2.5A1.5 1.5 0 001 2.5v11z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                                <form style="display: inline" action="/deleteEmployee" id="delete-employees-form" method="post">
+                                    <button type="submit" class="btn btn-sm btn-icon pt-0 pl-0 pb-0 pr-0" value="63b097be-346b-461e-81bf-dbd88246a88f" name="employeeId">
+                                        <svg class="bi bi-trash-fill" width="1.5em" height="1.5em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M2.5 1a1 1 0 00-1 1v1a1 1 0 001 1H3v9a2 2 0 002 2h6a2 2 0 002-2V4h.5a1 1 0 001-1V2a1 1 0 00-1-1H10a1 1 0 00-1-1H7a1 1 0 00-1 1H2.5zm3 4a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7a.5.5 0 01.5-.5zM8 5a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7A.5.5 0 018 5zm3 .5a.5.5 0 00-1 0v7a.5.5 0 001 0v-7z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="card-body">
+                                <img src="/img/ico.png" width="140" height="140" class="d-inline-block align-top" alt="logo">
+                                
+                                <h5>Student</h5>
+                            </div>
+                        </div>
+                        <div class="p-2 card mr-5 mb-4 shadow-sm" style="width: 15rem;">
+                            <div class="card-header">
+                                <h5 style="display: inline" class="my-0 font-weight-normal mr-2">Arthur Dorozhkin</h5>
+                                <form style="display: inline" action="/editEmployee" id="edit-employee-form" method="post">
+                                    <button type="submit" class="btn btn-sm btn-icon pt-0 pl-0 pb-0 pr-0" value="17f623fd-05b1-4acd-a8ec-d787098aecc6" name="employeeId">
+                                        <svg class="bi bi-pencil-square" width="1.5em" height="1.5em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z"></path>
+                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-6a.5.5 0 00-1 0v6a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-11a.5.5 0 01.5-.5H9a.5.5 0 000-1H2.5A1.5 1.5 0 001 2.5v11z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                                <form style="display: inline" action="/deleteEmployee" id="delete-employees-form" method="post">
+                                    <button type="submit" class="btn btn-sm btn-icon pt-0 pl-0 pb-0 pr-0" value="17f623fd-05b1-4acd-a8ec-d787098aecc6" name="employeeId">
+                                        <svg class="bi bi-trash-fill" width="1.5em" height="1.5em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M2.5 1a1 1 0 00-1 1v1a1 1 0 001 1H3v9a2 2 0 002 2h6a2 2 0 002-2V4h.5a1 1 0 001-1V2a1 1 0 00-1-1H10a1 1 0 00-1-1H7a1 1 0 00-1 1H2.5zm3 4a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7a.5.5 0 01.5-.5zM8 5a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7A.5.5 0 018 5zm3 .5a.5.5 0 00-1 0v7a.5.5 0 001 0v-7z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="card-body">
+                                <img src="/img/ico.png" width="140" height="140" class="d-inline-block align-top" alt="logo">
+                                
+                                <h5>Student</h5>
+                            </div>
+                        </div>
+                        <div class="p-2 card mr-5 mb-4 shadow-sm" style="width: 15rem;">
+                            <div class="card-header">
+                                <h5 style="display: inline" class="my-0 font-weight-normal mr-2">Andrey Ivanov</h5>
+                                <form style="display: inline" action="/editEmployee" id="edit-employee-form" method="post">
+                                    <button type="submit" class="btn btn-sm btn-icon pt-0 pl-0 pb-0 pr-0" value="fbae4804-5deb-44a7-9bec-e1d80ce9eb92" name="employeeId">
+                                        <svg class="bi bi-pencil-square" width="1.5em" height="1.5em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z"></path>
+                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-6a.5.5 0 00-1 0v6a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-11a.5.5 0 01.5-.5H9a.5.5 0 000-1H2.5A1.5 1.5 0 001 2.5v11z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                                <form style="display: inline" action="/deleteEmployee" id="delete-employees-form" method="post">
+                                    <button type="submit" class="btn btn-sm btn-icon pt-0 pl-0 pb-0 pr-0" value="fbae4804-5deb-44a7-9bec-e1d80ce9eb92" name="employeeId">
+                                        <svg class="bi bi-trash-fill" width="1.5em" height="1.5em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M2.5 1a1 1 0 00-1 1v1a1 1 0 001 1H3v9a2 2 0 002 2h6a2 2 0 002-2V4h.5a1 1 0 001-1V2a1 1 0 00-1-1H10a1 1 0 00-1-1H7a1 1 0 00-1 1H2.5zm3 4a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7a.5.5 0 01.5-.5zM8 5a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7A.5.5 0 018 5zm3 .5a.5.5 0 00-1 0v7a.5.5 0 001 0v-7z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="card-body">
+                                <img src="/img/ico.png" width="140" height="140" class="d-inline-block align-top" alt="logo">
+                                
+                                <h5>Senior Software Engineer</h5>
+                            </div>
+                        </div>
+                        <div class="p-2 card mr-5 mb-4 shadow-sm" style="width: 15rem;">
+                            <div class="card-header">
+                                <h5 style="display: inline" class="my-0 font-weight-normal mr-2">Roman Ivanov</h5>
+                                <form style="display: inline" action="/editEmployee" id="edit-employee-form" method="post">
+                                    <button type="submit" class="btn btn-sm btn-icon pt-0 pl-0 pb-0 pr-0" value="98157cd2-c379-4567-b41b-e687912130a3" name="employeeId">
+                                        <svg class="bi bi-pencil-square" width="1.5em" height="1.5em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z"></path>
+                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-6a.5.5 0 00-1 0v6a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-11a.5.5 0 01.5-.5H9a.5.5 0 000-1H2.5A1.5 1.5 0 001 2.5v11z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                                <form style="display: inline" action="/deleteEmployee" id="delete-employees-form" method="post">
+                                    <button type="submit" class="btn btn-sm btn-icon pt-0 pl-0 pb-0 pr-0" value="98157cd2-c379-4567-b41b-e687912130a3" name="employeeId">
+                                        <svg class="bi bi-trash-fill" width="1.5em" height="1.5em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M2.5 1a1 1 0 00-1 1v1a1 1 0 001 1H3v9a2 2 0 002 2h6a2 2 0 002-2V4h.5a1 1 0 001-1V2a1 1 0 00-1-1H10a1 1 0 00-1-1H7a1 1 0 00-1 1H2.5zm3 4a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7a.5.5 0 01.5-.5zM8 5a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7A.5.5 0 018 5zm3 .5a.5.5 0 00-1 0v7a.5.5 0 001 0v-7z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="card-body">
+                                <img src="/img/ico.png" width="140" height="140" class="d-inline-block align-top" alt="logo">
+                                
+                                <h5>Student</h5>
+                            </div>
+                        </div>
+                        <div class="p-2 card mr-5 mb-4 shadow-sm" style="width: 15rem;">
+                            <div class="card-header">
+                                <h5 style="display: inline" class="my-0 font-weight-normal mr-2">Ivan Ivanov</h5>
+                                <form style="display: inline" action="/editEmployee" id="edit-employee-form" method="post">
+                                    <button type="submit" class="btn btn-sm btn-icon pt-0 pl-0 pb-0 pr-0" value="58059f48-900c-4c91-a49c-220e3865908c" name="employeeId">
+                                        <svg class="bi bi-pencil-square" width="1.5em" height="1.5em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z"></path>
+                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-6a.5.5 0 00-1 0v6a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-11a.5.5 0 01.5-.5H9a.5.5 0 000-1H2.5A1.5 1.5 0 001 2.5v11z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                                <form style="display: inline" action="/deleteEmployee" id="delete-employees-form" method="post">
+                                    <button type="submit" class="btn btn-sm btn-icon pt-0 pl-0 pb-0 pr-0" value="58059f48-900c-4c91-a49c-220e3865908c" name="employeeId">
+                                        <svg class="bi bi-trash-fill" width="1.5em" height="1.5em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M2.5 1a1 1 0 00-1 1v1a1 1 0 001 1H3v9a2 2 0 002 2h6a2 2 0 002-2V4h.5a1 1 0 001-1V2a1 1 0 00-1-1H10a1 1 0 00-1-1H7a1 1 0 00-1 1H2.5zm3 4a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7a.5.5 0 01.5-.5zM8 5a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7A.5.5 0 018 5zm3 .5a.5.5 0 00-1 0v7a.5.5 0 001 0v-7z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="card-body">
+                                <img src="/img/ico.png" width="140" height="140" class="d-inline-block align-top" alt="logo">
+                                
+                                <h5>System Administrator</h5>
+                            </div>
+                        </div>
+                        <div class="p-2 card mr-5 mb-4 shadow-sm" style="width: 15rem;">
+                            <div class="card-header">
+                                <h5 style="display: inline" class="my-0 font-weight-normal mr-2">123 Kolpakova</h5>
+                                <form style="display: inline" action="/editEmployee" id="edit-employee-form" method="post">
+                                    <button type="submit" class="btn btn-sm btn-icon pt-0 pl-0 pb-0 pr-0" value="003c319c-d8b7-448c-8d4f-f0e596a550d1" name="employeeId">
+                                        <svg class="bi bi-pencil-square" width="1.5em" height="1.5em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z"></path>
+                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-6a.5.5 0 00-1 0v6a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-11a.5.5 0 01.5-.5H9a.5.5 0 000-1H2.5A1.5 1.5 0 001 2.5v11z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                                <form style="display: inline" action="/deleteEmployee" id="delete-employees-form" method="post">
+                                    <button type="submit" class="btn btn-sm btn-icon pt-0 pl-0 pb-0 pr-0" value="003c319c-d8b7-448c-8d4f-f0e596a550d1" name="employeeId">
+                                        <svg class="bi bi-trash-fill" width="1.5em" height="1.5em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M2.5 1a1 1 0 00-1 1v1a1 1 0 001 1H3v9a2 2 0 002 2h6a2 2 0 002-2V4h.5a1 1 0 001-1V2a1 1 0 00-1-1H10a1 1 0 00-1-1H7a1 1 0 00-1 1H2.5zm3 4a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7a.5.5 0 01.5-.5zM8 5a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7A.5.5 0 018 5zm3 .5a.5.5 0 00-1 0v7a.5.5 0 001 0v-7z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="card-body">
+                                <img src="/img/ico.png" width="140" height="140" class="d-inline-block align-top" alt="logo">
+                                
+                                <h5>Student</h5>
+                            </div>
+                        </div>
+                        <div class="p-2 card mr-5 mb-4 shadow-sm" style="width: 15rem;">
+                            <div class="card-header">
+                                <h5 style="display: inline" class="my-0 font-weight-normal mr-2">Daria Kolpakova</h5>
+                                <form style="display: inline" action="/editEmployee" id="edit-employee-form" method="post">
+                                    <button type="submit" class="btn btn-sm btn-icon pt-0 pl-0 pb-0 pr-0" value="8f69b71c-f27b-4653-8a14-bd8137d07310" name="employeeId">
+                                        <svg class="bi bi-pencil-square" width="1.5em" height="1.5em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z"></path>
+                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-6a.5.5 0 00-1 0v6a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-11a.5.5 0 01.5-.5H9a.5.5 0 000-1H2.5A1.5 1.5 0 001 2.5v11z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                                <form style="display: inline" action="/deleteEmployee" id="delete-employees-form" method="post">
+                                    <button type="submit" class="btn btn-sm btn-icon pt-0 pl-0 pb-0 pr-0" value="8f69b71c-f27b-4653-8a14-bd8137d07310" name="employeeId">
+                                        <svg class="bi bi-trash-fill" width="1.5em" height="1.5em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M2.5 1a1 1 0 00-1 1v1a1 1 0 001 1H3v9a2 2 0 002 2h6a2 2 0 002-2V4h.5a1 1 0 001-1V2a1 1 0 00-1-1H10a1 1 0 00-1-1H7a1 1 0 00-1 1H2.5zm3 4a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7a.5.5 0 01.5-.5zM8 5a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7A.5.5 0 018 5zm3 .5a.5.5 0 00-1 0v7a.5.5 0 001 0v-7z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="card-body">
+                                <img src="/img/ico.png" width="140" height="140" class="d-inline-block align-top" alt="logo">
+                                
+                                <h5>Student</h5>
+                            </div>
+                        </div>
+                        <div class="p-2 card mr-5 mb-4 shadow-sm" style="width: 15rem;">
+                            <div class="card-header">
+                                <h5 style="display: inline" class="my-0 font-weight-normal mr-2">123 Kolpakova</h5>
+                                <form style="display: inline" action="/editEmployee" id="edit-employee-form" method="post">
+                                    <button type="submit" class="btn btn-sm btn-icon pt-0 pl-0 pb-0 pr-0" value="5a83fff9-3cd2-46af-94f6-ef8e343fcf8c" name="employeeId">
+                                        <svg class="bi bi-pencil-square" width="1.5em" height="1.5em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z"></path>
+                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-6a.5.5 0 00-1 0v6a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-11a.5.5 0 01.5-.5H9a.5.5 0 000-1H2.5A1.5 1.5 0 001 2.5v11z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                                <form style="display: inline" action="/deleteEmployee" id="delete-employees-form" method="post">
+                                    <button type="submit" class="btn btn-sm btn-icon pt-0 pl-0 pb-0 pr-0" value="5a83fff9-3cd2-46af-94f6-ef8e343fcf8c" name="employeeId">
+                                        <svg class="bi bi-trash-fill" width="1.5em" height="1.5em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M2.5 1a1 1 0 00-1 1v1a1 1 0 001 1H3v9a2 2 0 002 2h6a2 2 0 002-2V4h.5a1 1 0 001-1V2a1 1 0 00-1-1H10a1 1 0 00-1-1H7a1 1 0 00-1 1H2.5zm3 4a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7a.5.5 0 01.5-.5zM8 5a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7A.5.5 0 018 5zm3 .5a.5.5 0 00-1 0v7a.5.5 0 001 0v-7z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="card-body">
+                                <img src="/img/ico.png" width="140" height="140" class="d-inline-block align-top" alt="logo">
+                                
+                                <h5>Student</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+</body></html>

@@ -1,0 +1,190 @@
+<html><head>
+    <title>Faces 2.x</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column h-100">
+<header>
+    <div class="navbar navbar-expand flex-column flex-md-row bd-navbar">
+        <img src="/img/ico.png" width="60" height="60" class="d-inline-block align-top" alt="logo">
+        <h1 class="my-0 mr-md-auto font-weight-normal">Faces 2.x</h1>
+        <a class="btn btn-outline-primary" href="/logout">Logout</a>
+    </div>
+</header>
+<form action="/addEmployee" id="new-title-form" enctype="multipart/form-data" onsubmit="return validate(this)" method="post">
+    <div class="col-md-12">
+        <div class="row flex-xl-nowrap">
+            <div class="col-md-2 col-xl-2 bd-sidebar">
+    <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+                <a href="/employees"><h4 class="my-0">People</h4></a>
+            </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+                <a href="/positions"><h4 class="my-0">Positions</h4></a>
+            </div>
+        </li>
+    </ul>
+</div>
+            <div class="col-md-6">
+                <!-- nav bar -->
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#employee-sample-data">Main data</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#employee-metadata">Metadata</a>
+                    </li>
+                </ul>
+                <!-- input form -->
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="employee-sample-data">
+                        <!-- Main data -->
+                        <ul class="list-group mb3">
+                            <li class="list-group-item">
+                                <div>
+                                    <label for="firstName">First name</label>
+                                    <input type="text" class="form-control" id="firstName" placeholder="" name="firstName" value="">
+                                </div>
+                                
+                            </li>
+                            <li class="list-group-item">
+                                <div>
+                                    <label for="lastName">Last name</label>
+                                    <input type="text" class="form-control" id="lastName" placeholder="" name="lastName" value="">
+                                </div>
+                                
+                            </li>
+                            <li class="list-group-item">
+                                <div>
+                                    <label for="secondName">Second name</label>
+                                    <input type="text" class="form-control" id="secondName" placeholder="" name="secondName" value="">
+                                </div>
+                                
+                            </li>
+                            <li class="list-group-item">
+                                <div>
+                                    <label for="titleForNewEmployee">Positions</label>
+                                    <select class="custom-select d-block w-100" id="titleForNewEmployee" required="" name="titleId">
+                                        <option value="">No position</option>
+                                        <option value="63b097be-346b-461e-81bf-dbd88246a88f">Student</option>
+                                        <option value="17f623fd-05b1-4acd-a8ec-d787098aecc6">Senior Software Engineer</option>
+                                        <option value="fbae4804-5deb-44a7-9bec-e1d80ce9eb92">System Administrator</option>
+                                        <option value="ad49dfa6-77aa-46b1-8d9c-aff00a3cbad1">TestPosition</option>
+                                        <option value="d4cfe67e-e857-4601-9b24-0bf2d7a08664">Test</option>
+                                        <option value="a11d58f1-5b1b-4625-8431-2d9d3d4ecaed">Test, Pos.</option>
+                                        <option value="99980aee-f88e-4400-8d0f-36f45e355f93">Test^position#4</option>
+                                        <option value="f9849948-b29b-4176-98b9-633151f43875">"one space"</option>
+                                        <option value="8a1934f3-f303-46e2-971b-844b51d0e71d">Java Dev.</option>
+                                        <option value="f72be90b-f4da-470e-b36c-1d8b5ae79b48">Java Dev.</option>
+                                        <option value="72928c89-f4f8-43dc-aeb4-4a49fab75991">Java Development</option>
+                                        <option value="16a684f4-908b-41ff-873f-4d1baf971a67">Java Development</option>
+                                        <option value="1565ae8a-8cb6-455e-9b8c-ed860f4b180a">Java Development</option>
+                                        <option value="c0e55e0c-d786-4ebe-87fe-61eaca62c76e">C++ Dev.</option>
+                                        <option value="f01954b2-abca-4994-b6b3-178d0bc025e2">TestPos1</option>
+                                        <option value="cbde1009-f023-4a99-baf3-062a4212bd4c">testpos2</option>
+                                        <option value="6223c951-00cd-4768-b150-85f8d64372ff">testpos3</option>
+                                    </select>
+                                </div>
+                                
+                            </li>
+                            <li class="list-group-item">
+                                <div class="input-group">
+                                    <label for="photo">Photo</label>
+                                    <div class="custom_photo" id="photo">
+                                        <input type="file" name="photo" class="custom-file-input" id="photo-input">
+                                        <label class="custom-file-label" for="photo-input">Choose photo</label>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+
+                            <button type="submit" class="btn btn-primary mt-3" name="action" value="add">Add employee
+                            </button>
+
+                            <button type="button" class="btn btn-outline-secondary mt-3" id="clearButton">Cancel
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Metadata -->
+                    <div class="tab-pane fade" id="employee-metadata">
+                        <fieldset>
+                            <div class="input-group">
+                                        </div><table class="table-striped">
+                                <thead>
+                                <tr>
+                                    <th scope="col" class="pl-1">Index</th>
+                                    <th scope="col">Key</th>
+                                    <th scope="col">Value</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row" class="pl-1">1</th>
+                                    <td><input type="text" class="form-control" id="metadata0.key" name="metadata[0].key" value=""></td>
+                                        <td><input type="text" class="form-control" id="metadata0.value" name="metadata[0].value" value=""></td>
+                                    
+                                </tr>
+                                </tbody>
+                            </table>
+                        </fieldset>
+                        <button class="btn btn-info mt-3" type="submit" id="submitButton" name="action" value="add-metadata">Update metadata list
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<script>
+    document.getElementById("clearButton").onclick = function(e) {
+        document.getElementById("firstName").value = "";
+        document.getElementById("lastName").value = "";
+        document.getElementById("secondName").value = "";
+        document.getElementById("titleForNewEmployee").value = "";
+    }
+    let _validFileExtensions = [".jpg", ".jpeg", ".pdf", ".png"];
+    function validate(oForm) {
+        let arrInputs = oForm.getElementsByTagName("input");
+        for (let i = 0; i < arrInputs.length; i++) {
+            let oInput = arrInputs[i];
+            if (oInput.type == "file") {
+                if (oInput.files[0].size > 5242880) {
+                    alert("Sorry, file is invalid, size needs to be less than 5 mb");
+                    return false;
+                }
+                let sFileName = oInput.value;
+                if (sFileName.length > 0) {
+                    let blnValid = false;
+                    for (let j = 0; j < _validFileExtensions.length; j++) {
+                        let sCurExtension = _validFileExtensions[j];
+                        if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
+                            blnValid = true;
+                            break;
+                        }
+                    }
+                    if (!blnValid) {
+                        alert("Sorry, file is invalid, allowed extensions are: " + _validFileExtensions.join(", "));
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+</body></html>

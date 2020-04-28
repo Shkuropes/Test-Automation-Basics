@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestsForFaces" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-04-27T21:52:37" hostname="BOMBA" time="11.965">
+  <properties/>
+  <testcase name="test2" classname="TestsForFaces" time="11.965">
+    <failure message="Element should have exact text 'Р’ РїРѕР»Рµ Р�РјСЏ РІРІРµРґРµРЅС‹ РЅРµРґРѕРїСѓСЃС‚РёРјС‹Рµ СЃРёРјРІРѕР»С‹' {body}&#13;&#10;Element: '&lt;body class=&quot;d-flex flex-column h-100&quot;&gt;Faces 2.x&#10;Logout&#10;People&#10;Positions&#10;Add new employee&#10;Search&#10;Positions&#10;                                    No Title&#10;                                    Student&#10;                                    Senior Software Engineer&#10;                                    System Administrator&#10;                                    TestPosition&#10;                                    Test&#10;                                    Test, Pos.&#10;                                    Test^position#4&#10;                                    &quot;one space&quot;&#10;                                    Java Dev.&#10;                                    Java Dev.&#10;                                    Java Development&#10;                                    Java Development&#10;                                    Java Development&#10;                                    C++ Dev.&#10;                                    TestPos1&#10;                                    testpos2&#10;                                    testpos3&#10;                                 Maybe filter&#10;Sort by name A-Z&#10;Sort by name Z-A&#10;Sort by title A-Z&#10;Sort by title Z-A&#10;Andrey Gordeev&#10;Student&#10;Arthur Dorozhkin&#10;Student&#10;Andrey Ivanov&#10;Senior Software Engineer&#10;Roman Ivanov&#10;Student&#10;Ivan Ivanov&#10;System Administrator&#10;123 Kolpakova&#10;Student&#10;Daria Kolpakova&#10;Student&#10;123 Kolpakova&#10;Student&#10;Kolpakova&#10;Student&#10;123 Kolpakova&#10;Student&lt;/body&gt;'&#13;&#10;Screenshot: file:/C:/Users/User/testsForFaces/build/reports/tests/1588024368735.0.png&#13;&#10;Page source: file:/C:/Users/User/testsForFaces/build/reports/tests/1588024368735.0.html&#13;&#10;Timeout: 4 s." type="com.codeborne.selenide.ex.ElementShould">Element should have exact text 'Р’ РїРѕР»Рµ Р�РјСЏ РІРІРµРґРµРЅС‹ РЅРµРґРѕРїСѓСЃС‚РёРјС‹Рµ СЃРёРјРІРѕР»С‹' {body}
+Element: '&lt;body class=&quot;d-flex flex-column h-100&quot;&gt;Faces 2.x
+Logout
+People
+Positions
+Add new employee
+Search
+Positions
+                                    No Title
+                                    Student
+                                    Senior Software Engineer
+                                    System Administrator
+                                    TestPosition
+                                    Test
+                                    Test, Pos.
+                                    Test^position#4
+                                    &quot;one space&quot;
+                                    Java Dev.
+                                    Java Dev.
+                                    Java Development
+                                    Java Development
+                                    Java Development
+                                    C++ Dev.
+                                    TestPos1
+                                    testpos2
+                                    testpos3
+                                 Maybe filter
+Sort by name A-Z
+Sort by name Z-A
+Sort by title A-Z
+Sort by title Z-A
+Andrey Gordeev
+Student
+Arthur Dorozhkin
+Student
+Andrey Ivanov
+Senior Software Engineer
+Roman Ivanov
+Student
+Ivan Ivanov
+System Administrator
+123 Kolpakova
+Student
+Daria Kolpakova
+Student
+123 Kolpakova
+Student
+Kolpakova
+Student
+123 Kolpakova
+Student&lt;/body&gt;'
+Screenshot: file:/C:/Users/User/testsForFaces/build/reports/tests/1588024368735.0.png
+Page source: file:/C:/Users/User/testsForFaces/build/reports/tests/1588024368735.0.html
+Timeout: 4 s.
+	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:72)
+	at com.codeborne.selenide.commands.Should.execute(Should.java:24)
+	at com.codeborne.selenide.commands.Should.execute(Should.java:10)
+	at com.codeborne.selenide.commands.Commands.execute(Commands.java:148)
+	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:100)
+	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:66)
+	at com.sun.proxy.$Proxy12.shouldHave(Unknown Source)
+	at TestsForFaces.test2(TestsForFaces.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:412)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Starting ChromeDriver 81.0.4044.69 (6813546031a4bc83f717a2ef7cd4ac6ec1199132-refs/branch-heads/4044@{#776}) on port 7837
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+апр. 28, 2020 12:52:42 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[1588024363.024][SEVERE]: Timed out receiving message from renderer: 0.100
+[1588024363.623][SEVERE]: Timed out receiving message from renderer: 0.100
+]]></system-err>
+</testsuite>
